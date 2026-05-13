@@ -1,9 +1,9 @@
 {
   "phase": "Phase 1 \u2014 paper trading",
   "days_live": 0,
-  "generated_at": "2026-05-13 10:53 UTC",
-  "benchmark_ticker": "URTH",
-  "benchmark_name": "MSCI World",
+  "generated_at": "2026-05-13 11:25 UTC",
+  "benchmark_ticker": "IWDA.L",
+  "benchmark_name": "MSCI World (GBP)",
   "aggregate": {
     "n_signals": 10,
     "n_open": 10,

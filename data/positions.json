@@ -1,14 +1,6 @@
 [
   {
     "strategy": "pead",
-    "ticker": "MCHP",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": null
-  },
-  {
-    "strategy": "pead",
     "ticker": "VST",
     "buy_date": "2026-05-13",
     "days_held": 0,
@@ -18,14 +10,6 @@
   {
     "strategy": "pead",
     "ticker": "EXPE",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": null
-  },
-  {
-    "strategy": "pead",
-    "ticker": "SATS",
     "buy_date": "2026-05-13",
     "days_held": 0,
     "return_pct": 0.0,
@@ -57,14 +41,6 @@
   },
   {
     "strategy": "pead",
-    "ticker": "DDOG",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": null
-  },
-  {
-    "strategy": "pead",
     "ticker": "Q",
     "buy_date": "2026-05-13",
     "days_held": 0,
@@ -74,6 +50,30 @@
   {
     "strategy": "pead",
     "ticker": "GWW",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": null
+  },
+  {
+    "strategy": "pead",
+    "ticker": "MCHP",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": null
+  },
+  {
+    "strategy": "pead",
+    "ticker": "ZBRA",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": null
+  },
+  {
+    "strategy": "pead",
+    "ticker": "MNST",
     "buy_date": "2026-05-13",
     "days_held": 0,
     "return_pct": 0.0,

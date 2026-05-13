@@ -1,15 +1,6 @@
 [
   {
     "strategy": "pead",
-    "ticker": "MCHP",
-    "signal_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "benchmark_return_pct": null,
-    "alpha_pct": null
-  },
-  {
-    "strategy": "pead",
     "ticker": "VST",
     "signal_date": "2026-05-13",
     "days_held": 0,
@@ -20,15 +11,6 @@
   {
     "strategy": "pead",
     "ticker": "EXPE",
-    "signal_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "benchmark_return_pct": null,
-    "alpha_pct": null
-  },
-  {
-    "strategy": "pead",
-    "ticker": "SATS",
     "signal_date": "2026-05-13",
     "days_held": 0,
     "return_pct": 0.0,
@@ -64,15 +46,6 @@
   },
   {
     "strategy": "pead",
-    "ticker": "DDOG",
-    "signal_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "benchmark_return_pct": null,
-    "alpha_pct": null
-  },
-  {
-    "strategy": "pead",
     "ticker": "Q",
     "signal_date": "2026-05-13",
     "days_held": 0,
@@ -83,6 +56,33 @@
   {
     "strategy": "pead",
     "ticker": "GWW",
+    "signal_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "benchmark_return_pct": null,
+    "alpha_pct": null
+  },
+  {
+    "strategy": "pead",
+    "ticker": "MCHP",
+    "signal_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "benchmark_return_pct": null,
+    "alpha_pct": null
+  },
+  {
+    "strategy": "pead",
+    "ticker": "ZBRA",
+    "signal_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "benchmark_return_pct": null,
+    "alpha_pct": null
+  },
+  {
+    "strategy": "pead",
+    "ticker": "MNST",
     "signal_date": "2026-05-13",
     "days_held": 0,
     "return_pct": 0.0,
