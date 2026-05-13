@@ -1,0 +1,15 @@
+{
+  "phase": "Phase 1 — paper trading",
+  "days_live": 0,
+  "generated_at": "Pending first run",
+  "benchmark_ticker": "URTH",
+  "benchmark_name": "MSCI World",
+  "aggregate": {
+    "n_signals": 0,
+    "n_open": 0,
+    "return_pct": null,
+    "alpha_pct": null,
+    "win_rate": null
+  },
+  "strategies": []
+}

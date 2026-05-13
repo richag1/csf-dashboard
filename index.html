@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClaudeSpeculationFund</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<style>
+  :root {
+    --bg: #0f1115;
+    --surface: #1a1d24;
+    --surface-2: #232730;
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #e8ebf0;
+    --text-secondary: #9aa0a8;
+    --text-tertiary: #6b7079;
+    --success: #5dcaa5;
+    --danger: #f09595;
+    --accent: #7f77dd;
+    --accent-2: #1d9e75;
+    --accent-3: #d85a30;
+    --accent-4: #d4537e;
+    --benchmark: #888780;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #fafaf7;
+      --surface: #ffffff;
+      --surface-2: #f1efe8;
+      --border: rgba(0, 0, 0, 0.08);
+      --text: #1a1a18;
+      --text-secondary: #5f5e5a;
+      --text-tertiary: #888780;
+      --success: #0f6e56;
+      --danger: #a32d2d;
+      --benchmark: #5f5e5a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+  body { font-size: 15px; line-height: 1.6; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 32px 24px 64px; }
+  header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+  h1 { margin: 0; font-size: 22px; font-weight: 500; letter-spacing: -0.01em; }
+  h2 { margin: 32px 0 8px; font-size: 18px; font-weight: 500; }
+  h3 { margin: 24px 0 8px; font-size: 16px; font-weight: 500; }
+  .subtitle { margin: 4px 0 0; font-size: 13px; color: var(--text-secondary); }
+  .updated { font-size: 12px; color: var(--text-tertiary); }
+  .chart-caption { margin: 0 0 12px; font-size: 12px; color: var(--text-secondary); }
+  .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 32px; }
+  .metric { background: var(--surface-2); border-radius: 10px; padding: 14px 16px; }
+  .metric-label { margin: 0; font-size: 12px; color: var(--text-secondary); }
+  .metric-value { margin: 6px 0 0; font-size: 24px; font-weight: 500; letter-spacing: -0.01em; }
+  .pos { color: var(--success); }
+  .neg { color: var(--danger); }
+  .chart-wrap { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 24px; }
+  .chart-canvas-wrap { position: relative; width: 100%; height: 320px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 12px; font-size: 12px; color: var(--text-secondary); }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-line { width: 16px; height: 3px; border-radius: 2px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .legend-square { width: 10px; height: 10px; border-radius: 2px; }
+  table { width: 100%; font-size: 13px; border-collapse: collapse; table-layout: fixed; }
+  th { text-align: left; padding: 10px 8px; color: var(--text-secondary); font-weight: 400; font-size: 12px; border-bottom: 0.5px solid var(--border); }
+  td { padding: 12px 8px; border-bottom: 0.5px solid var(--border); }
+  th.num, td.num { text-align: right; }
+  .ticker { font-weight: 500; font-variant-numeric: tabular-nums; }
+  .num { font-variant-numeric: tabular-nums; }
+  .strat-pill { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; background: var(--surface-2); color: var(--text-secondary); }
+  footer { margin-top: 48px; padding-top: 24px; border-top: 0.5px solid var(--border); text-align: center; font-size: 11px; color: var(--text-tertiary); }
+  .loading { padding: 60px 0; text-align: center; color: var(--text-tertiary); font-size: 13px; }
+  .error { padding: 20px; background: var(--surface-2); border-radius: 8px; color: var(--danger); font-size: 13px; }
+  .filter-bar { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+  .filter-btn { padding: 6px 12px; border-radius: 6px; border: 0.5px solid var(--border); background: transparent; color: var(--text-secondary); font-size: 12px; cursor: pointer; font-family: inherit; }
+  .filter-btn.active { background: var(--surface-2); color: var(--text); border-color: var(--border); }
+  .filter-btn:hover { background: var(--surface-2); }
+  @media (max-width: 600px) {
+    .container { padding: 20px 16px 48px; }
+    .chart-canvas-wrap { height: 260px; }
+    th, td { padding: 8px 4px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+  <div>
+    <h1>ClaudeSpeculationFund</h1>
+    <p class="subtitle" id="phase-label">Loading…</p>
+  </div>
+  <div class="updated" id="updated">—</div>
+</header>
+
+<div id="main-content">
+  <div class="loading">Loading dashboard data…</div>
+</div>
+
+<footer>
+  Paper trading log · no real capital · not investment advice<br>
+  Data refreshed daily after US market close · <a href="#" id="refresh-link" style="color: var(--text-secondary);">refresh</a>
+</footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function(){
+  const COLORS = {
+    benchmark: getComputedStyle(document.documentElement).getPropertyValue('--benchmark').trim() || '#888780',
+    pead: '#7f77dd',
+    quality_mom: '#1d9e75',
+    insider: '#d85a30',
+    moonshot: '#d4537e',
+    aggregate: '#42b3ff'
+  };
+  const STRATEGY_LABELS = {
+    pead: 'PEAD',
+    quality_mom: 'Quality-Momentum',
+    insider: 'Insider Clusters',
+    moonshot: 'Moonshot'
+  };
+
+  async function load() {
+    try {
+      // Cache-bust so the page picks up the daily commit without users hard-refreshing
+      const ts = new Date().getTime();
+      const [summary, performance, positions, equity] = await Promise.all([
+        fetch(`data/summary.json?t=${ts}`).then(r => r.json()),
+        fetch(`data/performance.json?t=${ts}`).then(r => r.json()),
+        fetch(`data/positions.json?t=${ts}`).then(r => r.json()),
+        fetch(`data/equity_curves.json?t=${ts}`).then(r => r.json()).catch(() => null)
+      ]);
+      render({ summary, performance, positions, equity });
+    } catch (err) {
+      document.getElementById('main-content').innerHTML =
+        `<div class="error">Failed to load data: ${err.message}. The dashboard updates after each daily run; if this is a fresh deployment, check back tomorrow.</div>`;
+      console.error(err);
+    }
+  }
+
+  function fmtPct(v, sign) {
+    if (v === null || v === undefined || Number.isNaN(v)) return '—';
+    const rounded = Math.round(v * 10) / 10;
+    const s = sign && rounded > 0 ? '+' : '';
+    return `${s}${rounded.toFixed(1)}%`;
+  }
+
+  function fmtPctClass(v) {
+    if (v === null || v === undefined || Number.isNaN(v)) return '';
+    return v >= 0 ? 'pos' : 'neg';
+  }
+
+  function render({ summary, performance, positions, equity }) {
+    document.getElementById('phase-label').textContent =
+      `${summary.phase || 'Phase 1 — paper trading'} · ${summary.days_live || 0} days live · vs ${summary.benchmark_name || 'benchmark'}`;
+    document.getElementById('updated').textContent =
+      `Last updated ${summary.generated_at || '—'}`;
+
+    const html = `
+      ${renderMetrics(summary)}
+      ${renderEquityChart()}
+      ${renderStrategyTable(summary)}
+      ${renderScatterChart()}
+      ${renderPositionsTable(positions)}
+    `;
+    document.getElementById('main-content').innerHTML = html;
+
+    drawEquityChart(equity);
+    drawScatterChart(performance);
+  }
+
+  function renderMetrics(s) {
+    const aggregate = s.aggregate || {};
+    return `
+      <div class="metric-grid">
+        <div class="metric">
+          <p class="metric-label">Aggregate alpha</p>
+          <p class="metric-value ${fmtPctClass(aggregate.alpha_pct)}">${fmtPct(aggregate.alpha_pct, true)}</p>
+        </div>
+        <div class="metric">
+          <p class="metric-label">Aggregate return</p>
+          <p class="metric-value ${fmtPctClass(aggregate.return_pct)}">${fmtPct(aggregate.return_pct, true)}</p>
+        </div>
+        <div class="metric">
+          <p class="metric-label">Total signals</p>
+          <p class="metric-value">${aggregate.n_signals || 0}</p>
+        </div>
+        <div class="metric">
+          <p class="metric-label">Open positions</p>
+          <p class="metric-value">${aggregate.n_open || 0}</p>
+        </div>
+        <div class="metric">
+          <p class="metric-label">Win rate</p>
+          <p class="metric-value">${aggregate.win_rate != null ? Math.round(aggregate.win_rate) + '%' : '—'}</p>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderEquityChart() {
+    return `
+      <div class="chart-wrap">
+        <h3 style="margin-top: 0;">Cumulative return vs benchmark</h3>
+        <p class="chart-caption">The only chart that matters. If our coloured lines aren't above the gray benchmark over 12+ months, the fund isn't working.</p>
+        <div class="legend" id="equity-legend"></div>
+        <div class="chart-canvas-wrap"><canvas id="equityChart" role="img" aria-label="Cumulative return chart"></canvas></div>
+      </div>
+    `;
+  }
+
+  function renderStrategyTable(s) {
+    const strats = s.strategies || [];
+    if (strats.length === 0) {
+      return `<div class="chart-wrap"><h3 style="margin-top:0;">Strategy performance</h3><p class="chart-caption">No data yet.</p></div>`;
+    }
+    const rows = strats.map(st => `
+      <tr>
+        <td><span class="strat-pill">${STRATEGY_LABELS[st.strategy] || st.strategy}</span></td>
+        <td class="num">${st.n_signals}</td>
+        <td class="num ${fmtPctClass(st.mean_return_pct)}">${fmtPct(st.mean_return_pct, true)}</td>
+        <td class="num ${fmtPctClass(st.mean_alpha_pct)}" style="font-weight: 500;">${fmtPct(st.mean_alpha_pct, true)}</td>
+        <td class="num">${st.win_rate != null ? Math.round(st.win_rate) + '%' : '—'}</td>
+      </tr>
+    `).join('');
+    return `
+      <div class="chart-wrap">
+        <h3 style="margin-top: 0;">Strategy performance</h3>
+        <p class="chart-caption">Cumulative since signal date. Not annualised — sample sizes are too small.</p>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 36%;">Strategy</th>
+              <th class="num">Signals</th>
+              <th class="num">Mean return</th>
+              <th class="num">Mean alpha</th>
+              <th class="num">Win rate</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function renderScatterChart() {
+    return `
+      <div class="chart-wrap">
+        <h3 style="margin-top: 0;">Signal scatter — alpha by signal date</h3>
+        <p class="chart-caption">Each dot is one buy signal. Y-axis is alpha to date. Above zero = beat benchmark from that entry.</p>
+        <div class="legend">
+          <span class="legend-item"><span class="legend-dot" style="background: ${COLORS.pead}"></span>PEAD</span>
+          <span class="legend-item"><span class="legend-square" style="background: ${COLORS.quality_mom}; transform: rotate(45deg);"></span>Quality-Momentum</span>
+          <span class="legend-item"><span class="legend-square" style="background: ${COLORS.insider}"></span>Insider</span>
+          <span class="legend-item"><span class="legend-square" style="background: ${COLORS.moonshot}; clip-path: polygon(50% 0, 100% 100%, 0 100%);"></span>Moonshot</span>
+        </div>
+        <div class="chart-canvas-wrap"><canvas id="scatterChart" role="img" aria-label="Signal scatter plot"></canvas></div>
+      </div>
+    `;
+  }
+
+  function renderPositionsTable(positions) {
+    if (!positions || positions.length === 0) {
+      return `<div class="chart-wrap"><h3 style="margin-top:0;">Open positions</h3><p class="chart-caption">No open positions yet.</p></div>`;
+    }
+    const sorted = positions.slice().sort((a, b) => (b.alpha_pct || -999) - (a.alpha_pct || -999));
+    const rows = sorted.map(p => `
+      <tr>
+        <td><span class="strat-pill">${STRATEGY_LABELS[p.strategy] || p.strategy}</span></td>
+        <td class="ticker">${p.ticker}</td>
+        <td class="num">${p.days_held}</td>
+        <td class="num ${fmtPctClass(p.return_pct)}">${fmtPct(p.return_pct, true)}</td>
+        <td class="num ${fmtPctClass(p.alpha_pct)}" style="font-weight: 500;">${fmtPct(p.alpha_pct, true)}</td>
+      </tr>
+    `).join('');
+    return `
+      <div class="chart-wrap">
+        <h3 style="margin-top: 0;">Open positions <span style="font-weight: 400; color: var(--text-secondary); font-size: 13px;">(${positions.length})</span></h3>
+        <p class="chart-caption">Currently held paper positions, sorted by alpha. Best and worst on the same screen by design.</p>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 32%;">Strategy</th>
+              <th>Ticker</th>
+              <th class="num">Days</th>
+              <th class="num">Return</th>
+              <th class="num">Alpha</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function drawEquityChart(equity) {
+    if (!equity || !equity.dates || equity.dates.length === 0) {
+      const ctx = document.getElementById('equityChart').getContext('2d');
+      ctx.font = '13px sans-serif';
+      ctx.fillStyle = '#888';
+      ctx.textAlign = 'center';
+      ctx.fillText('No equity curve data yet — needs at least 2 days of signals.', ctx.canvas.width / 2, 100);
+      return;
+    }
+
+    const datasets = [];
+    const legendItems = [];
+
+    if (equity.benchmark) {
+      datasets.push({
+        label: equity.benchmark_name || 'Benchmark',
+        data: equity.benchmark,
+        borderColor: COLORS.benchmark,
+        borderWidth: 2,
+        pointRadius: 0,
+        tension: 0.1,
+      });
+      legendItems.push(`<span class="legend-item"><span class="legend-line" style="background: ${COLORS.benchmark}"></span>${equity.benchmark_name || 'Benchmark'}</span>`);
+    }
+
+    for (const [strategy, series] of Object.entries(equity.strategies || {})) {
+      const color = COLORS[strategy] || COLORS.aggregate;
+      const label = STRATEGY_LABELS[strategy] || strategy;
+      datasets.push({
+        label,
+        data: series,
+        borderColor: color,
+        borderWidth: 2,
+        pointRadius: 0,
+        tension: 0.1,
+      });
+      legendItems.push(`<span class="legend-item"><span class="legend-line" style="background: ${color}"></span>${label}</span>`);
+    }
+
+    if (equity.aggregate) {
+      datasets.push({
+        label: 'Aggregate',
+        data: equity.aggregate,
+        borderColor: COLORS.aggregate,
+        borderWidth: 2.5,
+        pointRadius: 0,
+        tension: 0.1,
+      });
+      legendItems.push(`<span class="legend-item"><span class="legend-line" style="background: ${COLORS.aggregate}"></span>Aggregate</span>`);
+    }
+
+    document.getElementById('equity-legend').innerHTML = legendItems.join('');
+
+    new Chart(document.getElementById('equityChart'), {
+      type: 'line',
+      data: { labels: equity.dates, datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { intersect: false, mode: 'index' },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(1)}%`
+            }
+          }
+        },
+        scales: {
+          y: {
+            ticks: { callback: v => v + '%', color: '#888' },
+            grid: { color: 'rgba(128,128,128,0.1)' }
+          },
+          x: {
+            ticks: { color: '#888', maxRotation: 0, autoSkipPadding: 30 },
+            grid: { display: false }
+          }
+        }
+      }
+    });
+  }
+
+  function drawScatterChart(performance) {
+    if (!performance || performance.length === 0) {
+      const ctx = document.getElementById('scatterChart').getContext('2d');
+      ctx.font = '13px sans-serif';
+      ctx.fillStyle = '#888';
+      ctx.textAlign = 'center';
+      ctx.fillText('No signals yet.', ctx.canvas.width / 2, 100);
+      return;
+    }
+
+    const styleByStrategy = {
+      pead: { color: COLORS.pead, shape: 'circle' },
+      quality_mom: { color: COLORS.quality_mom, shape: 'rectRot' },
+      insider: { color: COLORS.insider, shape: 'rect' },
+      moonshot: { color: COLORS.moonshot, shape: 'triangle' }
+    };
+
+    const grouped = {};
+    for (const sig of performance) {
+      if (sig.alpha_pct === null || sig.alpha_pct === undefined) continue;
+      grouped[sig.strategy] = grouped[sig.strategy] || [];
+      grouped[sig.strategy].push({
+        x: sig.signal_date,
+        y: sig.alpha_pct,
+        ticker: sig.ticker
+      });
+    }
+
+    const datasets = Object.entries(grouped).map(([strategy, pts]) => {
+      const style = styleByStrategy[strategy] || { color: '#888', shape: 'circle' };
+      return {
+        label: STRATEGY_LABELS[strategy] || strategy,
+        data: pts,
+        backgroundColor: style.color,
+        borderColor: style.color,
+        pointStyle: style.shape,
+        pointRadius: 6,
+        pointHoverRadius: 8
+      };
+    });
+
+    new Chart(document.getElementById('scatterChart'), {
+      type: 'scatter',
+      data: { datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.raw.ticker}: ${ctx.parsed.y.toFixed(1)}% alpha (${ctx.parsed.x})`
+            }
+          }
+        },
+        scales: {
+          y: {
+            title: { display: true, text: 'Alpha % vs benchmark', color: '#888' },
+            ticks: { callback: v => v + '%', color: '#888' },
+            grid: { color: ctx => ctx.tick.value === 0 ? 'rgba(128,128,128,0.5)' : 'rgba(128,128,128,0.1)' }
+          },
+          x: {
+            type: 'category',
+            title: { display: true, text: 'Signal date', color: '#888' },
+            ticks: { color: '#888', maxRotation: 0, autoSkipPadding: 30 },
+            grid: { display: false }
+          }
+        }
+      }
+    });
+  }
+
+  document.getElementById('refresh-link').addEventListener('click', (e) => {
+    e.preventDefault();
+    load();
+  });
+
+  load();
+})();
+</script>
+
+</body>
+</html>
