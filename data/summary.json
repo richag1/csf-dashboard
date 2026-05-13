@@ -1,12 +1,12 @@
 {
   "phase": "Phase 1 \u2014 paper trading",
   "days_live": 0,
-  "generated_at": "2026-05-13 12:11 UTC",
+  "generated_at": "2026-05-13 13:14 UTC",
   "benchmark_ticker": "IWDA.L",
   "benchmark_name": "MSCI World (GBP)",
   "aggregate": {
-    "n_signals": 25,
-    "n_open": 25,
+    "n_signals": 29,
+    "n_open": 30,
     "return_pct": 0.0,
     "alpha_pct": 0.0,
     "win_rate": 0.0
@@ -22,7 +22,15 @@
     },
     {
       "strategy": "quality_mom",
-      "n_signals": 15,
+      "n_signals": 14,
+      "mean_return_pct": 0.0,
+      "median_return_pct": 0.0,
+      "mean_alpha_pct": 0.0,
+      "win_rate": 0.0
+    },
+    {
+      "strategy": "moonshot",
+      "n_signals": 5,
       "mean_return_pct": 0.0,
       "median_return_pct": 0.0,
       "mean_alpha_pct": 0.0,

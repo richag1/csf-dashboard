@@ -1,7 +1,87 @@
 [
   {
-    "strategy": "pead",
-    "ticker": "MCHP",
+    "strategy": "moonshot",
+    "ticker": "ALAB",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "EXPE",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "TRGP",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "GOOG",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "GOOGL",
+    "buy_date": "2026-05-13",
+    "days_held": null,
+    "return_pct": null,
+    "alpha_pct": null
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "APA",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "NEM",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "TPR",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "JBL",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "AMAT",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "NVDA",
     "buy_date": "2026-05-13",
     "days_held": 0,
     "return_pct": 0.0,
@@ -25,14 +105,6 @@
   },
   {
     "strategy": "quality_mom",
-    "ticker": "VRT",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": 0.0
-  },
-  {
-    "strategy": "quality_mom",
     "ticker": "KLAC",
     "buy_date": "2026-05-13",
     "days_held": 0,
@@ -40,72 +112,8 @@
     "alpha_pct": 0.0
   },
   {
-    "strategy": "quality_mom",
-    "ticker": "GLW",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": 0.0
-  },
-  {
-    "strategy": "quality_mom",
-    "ticker": "LRCX",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": 0.0
-  },
-  {
-    "strategy": "quality_mom",
-    "ticker": "FIX",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": 0.0
-  },
-  {
-    "strategy": "quality_mom",
-    "ticker": "TER",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": 0.0
-  },
-  {
-    "strategy": "quality_mom",
-    "ticker": "MU",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": 0.0
-  },
-  {
-    "strategy": "quality_mom",
-    "ticker": "WDC",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": 0.0
-  },
-  {
-    "strategy": "quality_mom",
-    "ticker": "NVDA",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": 0.0
-  },
-  {
-    "strategy": "quality_mom",
-    "ticker": "LITE",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": 0.0
-  },
-  {
-    "strategy": "quality_mom",
-    "ticker": "STX",
+    "strategy": "pead",
+    "ticker": "SATS",
     "buy_date": "2026-05-13",
     "days_held": 0,
     "return_pct": 0.0,
@@ -122,6 +130,14 @@
   {
     "strategy": "pead",
     "ticker": "ZBRA",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "pead",
+    "ticker": "MCHP",
     "buy_date": "2026-05-13",
     "days_held": 0,
     "return_pct": 0.0,
@@ -161,14 +177,6 @@
   },
   {
     "strategy": "pead",
-    "ticker": "SATS",
-    "buy_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "alpha_pct": 0.0
-  },
-  {
-    "strategy": "pead",
     "ticker": "EXPE",
     "buy_date": "2026-05-13",
     "days_held": 0,
@@ -184,8 +192,32 @@
     "alpha_pct": 0.0
   },
   {
-    "strategy": "quality_mom",
-    "ticker": "SNDK",
+    "strategy": "moonshot",
+    "ticker": "KRYS",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "moonshot",
+    "ticker": "OKLO",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "moonshot",
+    "ticker": "RKLB",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "moonshot",
+    "ticker": "VST",
     "buy_date": "2026-05-13",
     "days_held": 0,
     "return_pct": 0.0,
@@ -193,7 +225,15 @@
   },
   {
     "strategy": "quality_mom",
-    "ticker": "AMAT",
+    "ticker": "EME",
+    "buy_date": "2026-05-13",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "KEYS",
     "buy_date": "2026-05-13",
     "days_held": 0,
     "return_pct": 0.0,
