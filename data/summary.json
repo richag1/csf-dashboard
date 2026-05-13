@@ -1,15 +1,24 @@
 {
-  "phase": "Phase 1 — paper trading",
+  "phase": "Phase 1 \u2014 paper trading",
   "days_live": 0,
-  "generated_at": "Pending first run",
+  "generated_at": "2026-05-13 10:53 UTC",
   "benchmark_ticker": "URTH",
   "benchmark_name": "MSCI World",
   "aggregate": {
-    "n_signals": 0,
-    "n_open": 0,
-    "return_pct": null,
+    "n_signals": 10,
+    "n_open": 10,
+    "return_pct": 0.0,
     "alpha_pct": null,
-    "win_rate": null
+    "win_rate": 0.0
   },
-  "strategies": []
+  "strategies": [
+    {
+      "strategy": "pead",
+      "n_signals": 10,
+      "mean_return_pct": 0.0,
+      "median_return_pct": 0.0,
+      "mean_alpha_pct": null,
+      "win_rate": 0.0
+    }
+  ]
 }
