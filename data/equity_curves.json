@@ -1,5 +1,29 @@
 {
-  "dates": [],
-  "benchmark": null,
-  "strategies": {}
+  "dates": [
+    "2026-05-13",
+    "2026-05-14"
+  ],
+  "benchmark_name": "MSCI World (GBP)",
+  "benchmark": [
+    0.0,
+    0.0
+  ],
+  "strategies": {
+    "pead": [
+      0.0,
+      1.02
+    ],
+    "quality_mom": [
+      0.0,
+      0.04
+    ],
+    "moonshot": [
+      0.0,
+      0.0
+    ]
+  },
+  "aggregate": [
+    0.0,
+    0.35
+  ]
 }

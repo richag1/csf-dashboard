@@ -3,24 +3,258 @@
     "strategy": "pead",
     "ticker": "CSCO",
     "signal_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
+    "days_held": 1,
+    "return_pct": 13.41,
     "benchmark_return_pct": 0.0,
-    "alpha_pct": 0.0
+    "alpha_pct": 13.41
   },
   {
     "strategy": "pead",
     "ticker": "VST",
     "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": -0.5,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": -0.5
+  },
+  {
+    "strategy": "pead",
+    "ticker": "SATS",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 1.41,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 1.41
+  },
+  {
+    "strategy": "pead",
+    "ticker": "FOXA",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": -1.73,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": -1.73
+  },
+  {
+    "strategy": "pead",
+    "ticker": "FOX",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": -1.46,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": -1.46
+  },
+  {
+    "strategy": "pead",
+    "ticker": "Q",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 1.3,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 1.3
+  },
+  {
+    "strategy": "pead",
+    "ticker": "ZBRA",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 4.6,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 4.6
+  },
+  {
+    "strategy": "pead",
+    "ticker": "FIS",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": -1.85,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": -1.85
+  },
+  {
+    "strategy": "pead",
+    "ticker": "CEG",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 0.13,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 0.13
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "STX",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": -1.54,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": -1.54
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "SNDK",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": -4.46,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": -4.46
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "LITE",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": -2.77,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": -2.77
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "WDC",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": -1.0,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": -1.0
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "MU",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": -3.44,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": -3.44
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "TER",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": -1.88,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": -1.88
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "FIX",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 0.38,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 0.38
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "LRCX",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 1.26,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 1.26
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "GLW",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 0.86,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 0.86
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "KLAC",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 2.34,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 2.34
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "VRT",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 1.69,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 1.69
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "GEV",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 2.63,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 2.63
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "CAT",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 1.99,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 1.99
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "NVDA",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 4.39,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 4.39
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "AMAT",
+    "signal_date": "2026-05-13",
+    "days_held": 1,
+    "return_pct": 0.9,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 0.9
+  },
+  {
+    "strategy": "moonshot",
+    "ticker": "ALAB",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
     "alpha_pct": 0.0
   },
   {
-    "strategy": "pead",
-    "ticker": "SATS",
-    "signal_date": "2026-05-13",
+    "strategy": "moonshot",
+    "ticker": "VST",
+    "signal_date": "2026-05-14",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "moonshot",
+    "ticker": "RKLB",
+    "signal_date": "2026-05-14",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "moonshot",
+    "ticker": "OKLO",
+    "signal_date": "2026-05-14",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "moonshot",
+    "ticker": "KRYS",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -29,7 +263,7 @@
   {
     "strategy": "pead",
     "ticker": "FOXA",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -38,7 +272,7 @@
   {
     "strategy": "pead",
     "ticker": "FOX",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -47,7 +281,7 @@
   {
     "strategy": "pead",
     "ticker": "Q",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -56,7 +290,7 @@
   {
     "strategy": "pead",
     "ticker": "ZBRA",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -64,8 +298,8 @@
   },
   {
     "strategy": "pead",
-    "ticker": "FIS",
-    "signal_date": "2026-05-13",
+    "ticker": "SATS",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -74,7 +308,7 @@
   {
     "strategy": "pead",
     "ticker": "CEG",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -83,7 +317,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "STX",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -92,7 +326,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "SNDK",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -101,7 +335,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "LITE",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -110,7 +344,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "WDC",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -119,7 +353,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "MU",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -128,7 +362,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "TER",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -137,7 +371,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "FIX",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -146,7 +380,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "LRCX",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -155,7 +389,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "GLW",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -164,7 +398,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "KLAC",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -173,7 +407,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "VRT",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -182,7 +416,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "GEV",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -191,16 +425,7 @@
   {
     "strategy": "quality_mom",
     "ticker": "CAT",
-    "signal_date": "2026-05-13",
-    "days_held": 0,
-    "return_pct": 0.0,
-    "benchmark_return_pct": 0.0,
-    "alpha_pct": 0.0
-  },
-  {
-    "strategy": "quality_mom",
-    "ticker": "NVDA",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
@@ -209,7 +434,16 @@
   {
     "strategy": "quality_mom",
     "ticker": "AMAT",
-    "signal_date": "2026-05-13",
+    "signal_date": "2026-05-14",
+    "days_held": 0,
+    "return_pct": 0.0,
+    "benchmark_return_pct": 0.0,
+    "alpha_pct": 0.0
+  },
+  {
+    "strategy": "quality_mom",
+    "ticker": "NVDA",
+    "signal_date": "2026-05-14",
     "days_held": 0,
     "return_pct": 0.0,
     "benchmark_return_pct": 0.0,
