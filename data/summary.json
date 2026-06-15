@@ -1,39 +1,39 @@
 {
   "phase": "Phase 1 \u2014 paper trading",
-  "days_live": 30,
-  "generated_at": "2026-06-12 23:26 UTC",
+  "days_live": 33,
+  "generated_at": "2026-06-15 23:54 UTC",
   "benchmark_ticker": "IWDA.L",
   "benchmark_name": "MSCI World (GBP)",
   "aggregate": {
-    "n_signals": 307,
-    "n_open": 310,
-    "return_pct": 0.8548534201954398,
-    "alpha_pct": 2.6769055374592834,
-    "win_rate": 55.700325732899024
+    "n_signals": 323,
+    "n_open": 326,
+    "return_pct": 3.91969040247678,
+    "alpha_pct": 3.6746130030959754,
+    "win_rate": 56.34674922600619
   },
   "strategies": [
     {
       "strategy": "pead",
-      "n_signals": 107,
-      "mean_return_pct": -1.1185981308411217,
-      "median_return_pct": -0.29,
-      "mean_alpha_pct": 0.9458878504672894,
-      "win_rate": 45.794392523364486
+      "n_signals": 111,
+      "mean_return_pct": -1.3251351351351348,
+      "median_return_pct": -1.25,
+      "mean_alpha_pct": -1.2549549549549548,
+      "win_rate": 41.44144144144144
     },
     {
       "strategy": "quality_mom",
-      "n_signals": 195,
-      "mean_return_pct": 1.8149743589743594,
-      "median_return_pct": 3.02,
-      "mean_alpha_pct": 3.4929743589743594,
-      "win_rate": 61.02564102564103
+      "n_signals": 207,
+      "mean_return_pct": 6.5665700483091785,
+      "median_return_pct": 6.14,
+      "mean_alpha_pct": 6.142898550724637,
+      "win_rate": 64.25120772946859
     },
     {
       "strategy": "moonshot",
       "n_signals": 5,
-      "mean_return_pct": 5.642,
-      "median_return_pct": 0.53,
-      "mean_alpha_pct": 7.894000000000001,
+      "mean_return_pct": 10.774,
+      "median_return_pct": 2.67,
+      "mean_alpha_pct": 10.924000000000003,
       "win_rate": 60.0
     }
   ]
